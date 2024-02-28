@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Книги</h1>
+
+{% for item in books%}
+<div class="col-md6 border rounded">
+    <big><a href="/book/{{item.id}}">Книга {{item.name}}</a></big>
+    <div>
+       <table border="1">
+           <img src="/static/photos/{{item.picture}}" align="left" width="200"
+                height="233" vspace="5" hspace="10" >
+           <big>Название:</big>
+           <p>{{item.name}}</p>
+           <big>Автор:</big>
+           <p>{{item.author}}</p>
+           <big>Жанр:</big>
+           <p>{{item.genre}}</p>
+           <big>Кол-во страниц:</big>
+           <p>{{item.page}}</p>
+       </table>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
